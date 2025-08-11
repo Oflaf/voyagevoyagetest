@@ -2056,7 +2056,7 @@ controlImageFiles.forEach(file => {
     assets.controls[name] = img;
 });
 
-for (let i = 1; i <= 7; i++) { const img = new Image(); img.src = `Tree${i}.webp`; assets.treeImages.push(img); }
+for (let i = 1; i <= 7; i++) { const img = new Image(); img.src = `tree${i}.webp`; assets.treeImages.push(img); }
 for (let i = 1; i <= 7; i++) { const img = new Image(); img.src = `tree${i}.webp`; assets.backgroundTreeImages.push(img); }
 for (let i = 1; i <= 5; i++) { const img = new Image(); img.src = `building${i}.webp`; assets.buildingImages.push(img); }
 const specialBuildingNames = ['a', 'b', 'c', 'd', 'e', 'f'];
@@ -6500,3 +6500,4 @@ canvas.addEventListener('mouseleave', () => {
 });
 
 requestAnimationFrame(render);
+
