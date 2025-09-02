@@ -76,7 +76,6 @@ const rotaryMenuState = {
     }
 };
 
-
 const menedzerZasobow = {
     liczbaZasobowDoZaladowania: 0,
     liczbaZaladowanychZasobow: 0,
@@ -90,19 +89,38 @@ const menedzerZasobow = {
                 obraz.dataset.counted = 'true'; // Oznaczamy obraz jako policzony
                 this.liczbaZaladowanychZasobow++;
                 
-                // Wypisz postęp w konsoli - bardzo pomocne przy debugowaniu!
-                console.log(`Załadowano: ${this.liczbaZaladowanychZasobow} / ${this.liczbaZasobowDoZaladowania} (${obraz.src.split('/').pop()})`);
+                // --- NOWY KOD: Przygotowanie tekstu i aktualizacja UI ---
+                const nazwaZasobu = obraz.src.split('/').pop();
+                const tekstPostepu = `Loaded: ${this.liczbaZaladowanychZasobow} / ${this.liczbaZasobowDoZaladowania} (${nazwaZasobu})`;
+
+                // Wypisz postęp w konsoli
+                console.log(tekstPostepu);
+
+                // Znajdź element na ekranie i zaktualizuj jego treść
+                const infoElement = document.getElementById('ladowanie-info');
+                if (infoElement) {
+                    infoElement.textContent = tekstPostepu;
+                }
+                // --- KONIEC NOWEGO KODU ---
 
                 if (this.liczbaZaladowanychZasobow >= this.liczbaZasobowDoZaladowania) {
                     this.wszystkoZaladowane = true;
-                    console.log("Wszystkie zasoby graficzne zostały załadowane!");
+                    console.log("All graphic assets have been loaded!");
+                    
+                    // --- NOWY KOD: Aktualizacja tekstu po zakończeniu ---
+                    if (infoElement) {
+                        infoElement.textContent = 'Everything is ready!';
+                    }
+                    // --- KONIEC NOWEGO KODU ---
                 }
             }
         };
 
         // Sprawdzamy, czy obrazek nie jest już przypadkiem załadowany (np. z cache)
         if (obraz.complete && obraz.naturalWidth !== 0) {
-            onAssetLoad();
+            // Używamy setTimeout(..., 0), aby dać przeglądarce chwilę na narysowanie
+            // ekranu ładowania, zanim zaczniemy go aktualizować zasobami z cache.
+            setTimeout(() => onAssetLoad(), 0);
         } else {
             this.liczbaZasobowDoZaladowania++;
             obraz.addEventListener('load', onAssetLoad);
@@ -118,50 +136,6 @@ const menedzerZasobow = {
 /**
  * Tworzy i wstawia do dokumentu ekran ładowania (czarne tło + obracające się kółko).
  */
-function stworzEkranLadowania() {
-    // Tworzenie stylów dla animacji i ekranu
-    const style = document.createElement('style');
-    style.innerHTML = `
-        #ekran-ladowania {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: #000000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.7s ease-out;
-        }
-        
-        #ekran-ladowania .ladowarka {
-            border: 5px solid rgba(255, 255, 255, 0.2);
-            border-top: 5px solid #ffffff;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Tworzenie elementów HTML
-    const ekran = document.createElement('div');
-    ekran.id = 'ekran-ladowania';
-    
-    const ladowarka = document.createElement('div');
-    ladowarka.className = 'ladowarka';
-    
-    ekran.appendChild(ladowarka);
-    document.body.appendChild(ekran);
-}
 
 /**
  * Główna funkcja inicjująca grę po zakończeniu ładowania.
@@ -170,7 +144,7 @@ function stworzEkranLadowania() {
 function rozpocznijGre() {
     const ekranLadowania = document.getElementById('ekran-ladowania');
     if (ekranLadowania) {
-        console.log("Znaleziono ekran ładowania. Dodaję klasę 'ukryty'...");
+        console.log("Loading screen found. Adding class 'hidden' ...");
         ekranLadowania.classList.add('ukryty');
         
         // Usunięcie elementu z drzewa DOM po zakończeniu animacji
@@ -186,7 +160,7 @@ function rozpocznijGre() {
         shaderCanvas.style.display = 'block';
     }
 
-    console.log("Rozpoczynam pętlę renderowania gry...");
+    console.log("Starting the game rendering loop...");
     requestAnimationFrame(render);
 }
 
