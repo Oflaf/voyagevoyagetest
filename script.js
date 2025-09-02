@@ -1024,11 +1024,11 @@ const introAnimationState = {
 
 // KONFIGURACJA DROGOWSKAZÓW
 const signsToSpawn = [
-  { distance: 10, imageSrc: 'sign1.png', side: 'right' },
-  { distance: 40, imageSrc: 'sign90.png', side: 'right' },
-  { distance: 2970, imageSrc: 'sign2.png', side: 'right' },
-  { distance: 3360, imageSrc: 'sign3.png', side: 'left' },
-  { distance: 3395, imageSrc: 'sign90.png', side: 'right' },
+  { distance: 10, imageSrc: 'signs/sign1.png', side: 'right' },
+  { distance: 40, imageSrc: 'signs/sign90.png', side: 'right' },
+  { distance: 2970, imageSrc: 'signs/sign2.png', side: 'right' },
+  { distance: 3360, imageSrc: 'signs/sign3.png', side: 'left' },
+  { distance: 3395, imageSrc: 'signs/sign90.png', side: 'right' },
 ];
 
 // KONFIGURACJA STREF MIEJSKICH
@@ -1084,22 +1084,19 @@ window.addEventListener('resize', updateButtonPositions);
 
 // Wywołaj initCanvas tylko raz na starcie
 window.addEventListener('load', () => {
-    // 1. Inicjalizacja gry (bez tworzenia ekranu ładowania)
+    // 1. Inicjalizacja gry (bez zmian)
     initCanvas();
     createMapButton();
     createPhotoButton();
     createCarSignButton();
     updateButtonPositions();
     
-    // UWAGA: Ta funkcja MUSI być wywołana PRZED pętlą sprawdzającą,
-    // jeśli tworzy obiekty, których zasoby są śledzone.
-    if (typeof initializeWorldState === 'function') {
-        initializeWorldState(STARTING_DISTANCE_METERS);
-    } else {
-        console.warn("Funkcja initializeWorldState nie została znaleziona.");
-    }
+    // --- NOWY KOD: Wywołaj funkcję inicjalizującą świat ---
+    // Musi być wywołana PRZED pętlą sprawdzającą stan ładowania.
+    initializeWorldState(STARTING_DISTANCE_METERS);
+    // --- KONIEC NOWEGO KODU ---
     
-    // 2. Rozpocznij sprawdzanie, czy można już uruchomić grę
+    // 2. Rozpocznij sprawdzanie, czy można już uruchomić grę (bez zmian)
     const czasStartu = Date.now();
     const minimalnyCzasLadowania = 2000; // 2 sekundy
 
@@ -3382,7 +3379,7 @@ const roadsideObjects = {
     lanterns: [], // <--- DODAJ TĘ LINIĘ
     slowOpponents: [] // Nowa tablica na naszych przeciwników
 };
-const treeSpawner = { nextSpawnDistance: -2200, inCluster: false, clusterTreesRemaining: 0 };
+const treeSpawner = { nextSpawnDistance: 100 + Math.random() * 200, inCluster: false, clusterTreesRemaining: 0 };
 const backgroundTreeSpawner = { nextSpawnDistance: 500, inCluster: false, clusterTreesRemaining: 0 };
 const buildingSpawner = { nextSpawnDistance: 5000 + Math.random() * 10000 };
 const forestSpawner = { nextSpawnDistance: 8000 + Math.random() * 10000, inCluster: false, clusterForestsRemaining: 0 };
@@ -5545,6 +5542,44 @@ function applyCrashVisuals() { if (!gameState.crashState.active) return; const t
  * GŁÓWNA, ZUNIFIKOWANA PĘTLA RENDEROWANIA - POPRAWIONA WERSJA
  * Naprawiono problem z renderowaniem dymu na kokpicie poprzez zmianę kolejności rysowania.
  */
+
+function initializeWorldState(startingDistance) {
+    if (startingDistance <= 0) {
+        return; // Nie ma czego inicjalizować
+    }
+
+    console.log(`Inicjalizuję świat do dystansu: ${startingDistance} metrów...`);
+    let simulatedDistance = 0;
+    const timeStep = 1 / 60;   // Symulujemy stały, mały krok czasowy
+    const simulatedSpeed = 100; // Używamy stałej prędkości do symulacji
+
+    // Pętla, która "przejeżdża" dystans w tle
+    while (simulatedDistance < startingDistance) {
+        const distanceThisStep = (simulatedSpeed / 3.6) * timeStep;
+        simulatedDistance += distanceThisStep;
+        
+        // Kluczowe: Tymczasowo ustawiamy globalny dystans, aby spawnery działały poprawnie
+        totalDistanceTraveled = simulatedDistance;
+
+        // Wywołujemy funkcje aktualizujące dla wszystkich obiektów przydrożnych
+        // (bez ich rysowania!)
+        updateTrees(simulatedSpeed);
+        updateBackgroundTrees(simulatedSpeed);
+        updateBuildings(simulatedSpeed);
+        updateForests(simulatedSpeed);
+        updateFields(simulatedSpeed);
+        updatePoles(simulatedSpeed);
+        updateBackForests(simulatedSpeed);
+        updateSignSpawner(); // Znaki muszą być sprawdzane w ten sposób
+        updatePickets(simulatedSpeed);
+        updateLanternSpawner();
+    }
+
+    // Po zakończeniu pętli, ustawiamy finalny, prawidłowy dystans
+    totalDistanceTraveled = startingDistance;
+    console.log(`Inicjalizacja świata zakończona. Stan na ${totalDistanceTraveled.toFixed(0)}m.`);
+}
+
 function render(timestamp) {
     // Ustawienie stałego deltaTime dla spójności animacji
     window.deltaTime = 1 / 60;
@@ -6717,4 +6752,3 @@ canvas.addEventListener('mouseleave', () => {
     if (isOverlayDragging) { isOverlayDragging = false; canvas.style.cursor = ''; } 
     if (hangerState.isDragging) { hangerState.isDragging = false; canvas.style.cursor = ''; } 
 });
-
