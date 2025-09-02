@@ -1024,11 +1024,11 @@ const introAnimationState = {
 
 // KONFIGURACJA DROGOWSKAZÓW
 const signsToSpawn = [
-  { distance: 10, imageSrc: 'signs/sign1.png', side: 'right' },
-  { distance: 40, imageSrc: 'signs/sign90.png', side: 'right' },
-  { distance: 2970, imageSrc: 'signs/sign2.png', side: 'right' },
-  { distance: 3360, imageSrc: 'signs/sign3.png', side: 'left' },
-  { distance: 3395, imageSrc: 'signs/sign90.png', side: 'right' },
+  { distance: 10, imageSrc: 'sign1.png', side: 'right' },
+  { distance: 40, imageSrc: 'sign90.png', side: 'right' },
+  { distance: 2970, imageSrc: 'sign2.png', side: 'right' },
+  { distance: 3360, imageSrc: 'sign3.png', side: 'left' },
+  { distance: 3395, imageSrc: 'sign90.png', side: 'right' },
 ];
 
 // KONFIGURACJA STREF MIEJSKICH
