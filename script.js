@@ -2205,7 +2205,7 @@ controlImageFiles.forEach(file => {
 });
 
 for (let i = 1; i <= 7; i++) { const img = new Image(); img.src = `Tree${i}.webp`; assets.treeImages.push(img); menedzerZasobow.sledz(img); }
-for (let i = 1; i <= 7; i++) { const img = new Image(); img.src = `tree${i}.webp`; assets.backgroundTreeImages.push(img); menedzerZasobow.sledz(img); }
+for (let i = 1; i <= 7; i++) { const img = new Image(); img.src = `Tree${i}.webp`; assets.backgroundTreeImages.push(img); menedzerZasobow.sledz(img); }
 for (let i = 1; i <= 5; i++) { const img = new Image(); img.src = `building${i}.webp`; assets.buildingImages.push(img); menedzerZasobow.sledz(img); }
 const specialBuildingNames = ['a', 'b', 'c', 'd', 'e', 'f'];
 for (const name of specialBuildingNames) { const img = new Image(); img.src = `building${name}.webp`; assets.specialBuildingImages.push(img); menedzerZasobow.sledz(img); }
@@ -6717,3 +6717,4 @@ canvas.addEventListener('mouseleave', () => {
     if (isOverlayDragging) { isOverlayDragging = false; canvas.style.cursor = ''; } 
     if (hangerState.isDragging) { hangerState.isDragging = false; canvas.style.cursor = ''; } 
 });
+
