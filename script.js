@@ -1050,11 +1050,11 @@ const introAnimationState = {
 
 // KONFIGURACJA DROGOWSKAZÓW
 const signsToSpawn = [
-  { distance: 10, imageSrc: 'img/signs/sign1.png', side: 'right' },
-  { distance: 40, imageSrc: 'img/signs/sign90.png', side: 'right' },
-  { distance: 2970, imageSrc: 'img/signs/sign2.png', side: 'right' },
-  { distance: 3360, imageSrc: 'img/signs/sign3.png', side: 'left' },
-  { distance: 3395, imageSrc: 'img/signs/sign90.png', side: 'right' },
+  { distance: 10, imageSrc: 'sign1.png', side: 'right' },
+  { distance: 40, imageSrc: 'sign90.png', side: 'right' },
+  { distance: 2970, imageSrc: 'sign2.png', side: 'right' },
+  { distance: 3360, imageSrc: 'sign3.png', side: 'left' },
+  { distance: 3395, imageSrc: 'sign90.png', side: 'right' },
 ];
 
 // KONFIGURACJA STREF MIEJSKICH
@@ -2143,72 +2143,72 @@ const assets = {
   wheel: new Image(),
 };
 
-assets.trunk.src = "img/trunk.png"; menedzerZasobow.sledz(assets.trunk);
-assets.lantern.src = "img/lantern.png"; menedzerZasobow.sledz(assets.lantern);
-assets.oilBase.src = "img/oilbase.png"; menedzerZasobow.sledz(assets.oilBase);
-assets.beerBase.src = "img/beerbase.png"; menedzerZasobow.sledz(assets.beerBase);
-assets.beer.src = "img/beer.png"; menedzerZasobow.sledz(assets.beer);
-assets.engineBack.src = "img/engineback.png"; menedzerZasobow.sledz(assets.engineBack);
-assets.engineBody.src = "img/engine.png"; menedzerZasobow.sledz(assets.engineBody);
-assets.oilCap.src = "img/oilcap.png"; menedzerZasobow.sledz(assets.oilCap);
-assets.oilBottle.src = "img/oilbottle.png"; menedzerZasobow.sledz(assets.oilBottle);
-assets.oildrop.src = "img/oildrop.png"; menedzerZasobow.sledz(assets.oildrop);
-assets.arm.src = "img/arm.png"; menedzerZasobow.sledz(assets.arm);
+assets.trunk.src = "trunk.png"; menedzerZasobow.sledz(assets.trunk);
+assets.lantern.src = "lantern.png"; menedzerZasobow.sledz(assets.lantern);
+assets.oilBase.src = "oilbase.png"; menedzerZasobow.sledz(assets.oilBase);
+assets.beerBase.src = "beerbase.png"; menedzerZasobow.sledz(assets.beerBase);
+assets.beer.src = "beer.png"; menedzerZasobow.sledz(assets.beer);
+assets.engineBack.src = "engineback.png"; menedzerZasobow.sledz(assets.engineBack);
+assets.engineBody.src = "engine.png"; menedzerZasobow.sledz(assets.engineBody);
+assets.oilCap.src = "oilcap.png"; menedzerZasobow.sledz(assets.oilCap);
+assets.oilBottle.src = "oilbottle.png"; menedzerZasobow.sledz(assets.oilBottle);
+assets.oildrop.src = "oildrop.png"; menedzerZasobow.sledz(assets.oildrop);
+assets.arm.src = "arm.png"; menedzerZasobow.sledz(assets.arm);
 assets.road.src = "road.png"; menedzerZasobow.sledz(assets.road);
-assets.cockpit.src = "img/interior.png"; menedzerZasobow.sledz(assets.cockpit);
-assets.cockpitBroken.src = "img/interiorbroken.png"; menedzerZasobow.sledz(assets.cockpitBroken);
-assets.steeringWheel.src = "img/steering_wheel.png"; menedzerZasobow.sledz(assets.steeringWheel);
-assets.shifter.src = "img/shiffter.png"; menedzerZasobow.sledz(assets.shifter);
-assets.field.src = "img/field.webp"; menedzerZasobow.sledz(assets.field);
-assets.forest.src = "img/forest.png"; menedzerZasobow.sledz(assets.forest);
+assets.cockpit.src = "interior.png"; menedzerZasobow.sledz(assets.cockpit);
+assets.cockpitBroken.src = "interiorbroken.png"; menedzerZasobow.sledz(assets.cockpitBroken);
+assets.steeringWheel.src = "steering_wheel.png"; menedzerZasobow.sledz(assets.steeringWheel);
+assets.shifter.src = "shiffter.png"; menedzerZasobow.sledz(assets.shifter);
+assets.field.src = "field.webp"; menedzerZasobow.sledz(assets.field);
+assets.forest.src = "forest.png"; menedzerZasobow.sledz(assets.forest);
 assets.backforest.src = "backforest.png"; menedzerZasobow.sledz(assets.backforest);
 assets.grassLeft = new Image();
 assets.grassRight = new Image();
-assets.grassLeft.src = "img/grass.webp"; menedzerZasobow.sledz(assets.grassLeft);
-assets.grassRight.src = "img/grass.webp"; menedzerZasobow.sledz(assets.grassRight);
+assets.grassLeft.src = "grass.webp"; menedzerZasobow.sledz(assets.grassLeft);
+assets.grassRight.src = "grass.webp"; menedzerZasobow.sledz(assets.grassRight);
 assets.secondGrassLeft = new Image();
 assets.secondGrassRight = new Image();
-assets.secondGrassLeft.src = "img/secondgrass.webp"; menedzerZasobow.sledz(assets.secondGrassLeft);
-assets.secondGrassRight.src = "img/secondgrass.webp"; menedzerZasobow.sledz(assets.secondGrassRight);
+assets.secondGrassLeft.src = "secondgrass.webp"; menedzerZasobow.sledz(assets.secondGrassLeft);
+assets.secondGrassRight.src = "secondgrass.webp"; menedzerZasobow.sledz(assets.secondGrassRight);
 assets.blades.src = "blades.png"; menedzerZasobow.sledz(assets.blades);
 assets.dust.src = "dust.png"; menedzerZasobow.sledz(assets.dust);
 assets.dust_blue.src = "dust_blue.png"; menedzerZasobow.sledz(assets.dust_blue);
 assets.hang.src = "hang.png"; menedzerZasobow.sledz(assets.hang);
 assets.photo.src = "photo.png"; menedzerZasobow.sledz(assets.photo);
 assets.carSign.src = "car_sign.png"; menedzerZasobow.sledz(assets.carSign);
-assets.sky.src = "img/sky.png"; menedzerZasobow.sledz(assets.sky);
+assets.sky.src = "sky.png"; menedzerZasobow.sledz(assets.sky);
 assets.ground = new Image();
-assets.ground.src = "img/ground.png"; menedzerZasobow.sledz(assets.ground);
-assets.picket.src = "img/picket.png"; menedzerZasobow.sledz(assets.picket);
-assets.pedalClutchBrake.src = "img/pedal1.png"; menedzerZasobow.sledz(assets.pedalClutchBrake);
-assets.pedalGas.src = "img/pedal2.png"; menedzerZasobow.sledz(assets.pedalGas);
-assets.pole.src = "img/pole.png"; menedzerZasobow.sledz(assets.pole);
-assets.windowGlass.src = "img/window.png"; menedzerZasobow.sledz(assets.windowGlass);
-assets.windowButtonHandle1.src = "img/handle.png"; menedzerZasobow.sledz(assets.windowButtonHandle1);
-assets.windowButtonHandle2.src = "img/handle2.png"; menedzerZasobow.sledz(assets.windowButtonHandle2);
+assets.ground.src = "ground.png"; menedzerZasobow.sledz(assets.ground);
+assets.picket.src = "picket.png"; menedzerZasobow.sledz(assets.picket);
+assets.pedalClutchBrake.src = "pedal1.png"; menedzerZasobow.sledz(assets.pedalClutchBrake);
+assets.pedalGas.src = "pedal2.png"; menedzerZasobow.sledz(assets.pedalGas);
+assets.pole.src = "pole.png"; menedzerZasobow.sledz(assets.pole);
+assets.windowGlass.src = "window.png"; menedzerZasobow.sledz(assets.windowGlass);
+assets.windowButtonHandle1.src = "handle.png"; menedzerZasobow.sledz(assets.windowButtonHandle1);
+assets.windowButtonHandle2.src = "handle2.png"; menedzerZasobow.sledz(assets.windowButtonHandle2);
 assets.windowButton = assets.windowButtonHandle1;
-assets.handleMirror.src = "img/handlemirror.png"; menedzerZasobow.sledz(assets.handleMirror);
-assets.button1.src = "img/controls/button1.png"; menedzerZasobow.sledz(assets.button1);
-assets.button2.src = "img/controls/button2.png"; menedzerZasobow.sledz(assets.button2);
-assets.interiorLight.src = "img/interiorlighten.png"; menedzerZasobow.sledz(assets.interiorLight);
-assets.bird1.src = "img/bird.png"; menedzerZasobow.sledz(assets.bird1);
-assets.bird2.src = "img/bird2.png"; menedzerZasobow.sledz(assets.bird2);
-assets.radio.src = "img/radio.png"; menedzerZasobow.sledz(assets.radio);
-assets.wiper.src = "img/wiper.png"; menedzerZasobow.sledz(assets.wiper);
-assets.counterl.src = "img/controls/counterl.png"; menedzerZasobow.sledz(assets.counterl);
-assets.counterHud.src = "img/controls/counterhud.png"; menedzerZasobow.sledz(assets.counterHud);
-assets.counterNeedle.src = "img/controls/counter_needle.png"; menedzerZasobow.sledz(assets.counterNeedle);
-assets.mirror.src = "img/mirror1.png"; menedzerZasobow.sledz(assets.mirror);
-assets.mirror2.src = "img/mirror2.png"; menedzerZasobow.sledz(assets.mirror2);
-assets.docObject.src = "img/doc.png"; menedzerZasobow.sledz(assets.docObject);
-assets.opponentBottom.src = "img/opponent_bottom.png"; menedzerZasobow.sledz(assets.opponentBottom);
-assets.opponentTop.src = "img/opponent_top.png"; menedzerZasobow.sledz(assets.opponentTop);
-assets.c_cockpit.src = "img/c_cockpit.png"; menedzerZasobow.sledz(assets.c_cockpit);
-assets.c_engine.src = "img/c_engine.png"; menedzerZasobow.sledz(assets.c_engine);
-assets.c_trunk.src = "img/c_trunk.png"; menedzerZasobow.sledz(assets.c_trunk);
-assets.blinker.src = "img/blinker.png"; menedzerZasobow.sledz(assets.blinker);
-assets.wheelBase.src = "img/wheelbase.png"; menedzerZasobow.sledz(assets.wheelBase);
-assets.wheel.src = "img/wheel.png"; menedzerZasobow.sledz(assets.wheel);
+assets.handleMirror.src = "handlemirror.png"; menedzerZasobow.sledz(assets.handleMirror);
+assets.button1.src = "button1.png"; menedzerZasobow.sledz(assets.button1);
+assets.button2.src = "button2.png"; menedzerZasobow.sledz(assets.button2);
+assets.interiorLight.src = "interiorlighten.png"; menedzerZasobow.sledz(assets.interiorLight);
+assets.bird1.src = "bird.png"; menedzerZasobow.sledz(assets.bird1);
+assets.bird2.src = "bird2.png"; menedzerZasobow.sledz(assets.bird2);
+assets.radio.src = "radio.png"; menedzerZasobow.sledz(assets.radio);
+assets.wiper.src = "wiper.png"; menedzerZasobow.sledz(assets.wiper);
+assets.counterl.src = "counterl.png"; menedzerZasobow.sledz(assets.counterl);
+assets.counterHud.src = "counterhud.png"; menedzerZasobow.sledz(assets.counterHud);
+assets.counterNeedle.src = "counter_needle.png"; menedzerZasobow.sledz(assets.counterNeedle);
+assets.mirror.src = "mirror1.png"; menedzerZasobow.sledz(assets.mirror);
+assets.mirror2.src = "mirror2.png"; menedzerZasobow.sledz(assets.mirror2);
+assets.docObject.src = "doc.png"; menedzerZasobow.sledz(assets.docObject);
+assets.opponentBottom.src = "opponent_bottom.png"; menedzerZasobow.sledz(assets.opponentBottom);
+assets.opponentTop.src = "opponent_top.png"; menedzerZasobow.sledz(assets.opponentTop);
+assets.c_cockpit.src = "c_cockpit.png"; menedzerZasobow.sledz(assets.c_cockpit);
+assets.c_engine.src = "c_engine.png"; menedzerZasobow.sledz(assets.c_engine);
+assets.c_trunk.src = "c_trunk.png"; menedzerZasobow.sledz(assets.c_trunk);
+assets.blinker.src = "blinker.png"; menedzerZasobow.sledz(assets.blinker);
+assets.wheelBase.src = "wheelbase.png"; menedzerZasobow.sledz(assets.wheelBase);
+assets.wheel.src = "wheel.png"; menedzerZasobow.sledz(assets.wheel);
 
 assets.c_trunk.onload = () => { 
     rotaryMenuState.items[0].image = assets.c_cockpit;
@@ -2216,8 +2216,8 @@ assets.c_trunk.onload = () => {
     rotaryMenuState.items[2].image = assets.c_trunk;
 };
 
-docOverlayImages.images[0].src = "img/document1.png"; menedzerZasobow.sledz(docOverlayImages.images[0]);
-docOverlayImages.images[1].src = "img/document2.png"; menedzerZasobow.sledz(docOverlayImages.images[1]);
+docOverlayImages.images[0].src = "document1.png"; menedzerZasobow.sledz(docOverlayImages.images[0]);
+docOverlayImages.images[1].src = "document2.png"; menedzerZasobow.sledz(docOverlayImages.images[1]);
 
 const oilDrops = []; 
 
@@ -2225,17 +2225,17 @@ const controlImageFiles = ['acu.png', 'oil.png', 'lights.png', 'stop.png', 'long
 controlImageFiles.forEach(file => {
     const name = file.split('.')[0];
     const img = new Image();
-    img.src = `img/controls/${file}`;
+    img.src = `${file}`;
     assets.controls[name] = img;
     menedzerZasobow.sledz(img); // Śledzimy każdy obrazek z tej pętli
 });
 
-for (let i = 1; i <= 7; i++) { const img = new Image(); img.src = `img/Tree${i}.webp`; assets.treeImages.push(img); menedzerZasobow.sledz(img); }
-for (let i = 1; i <= 7; i++) { const img = new Image(); img.src = `img/tree${i}.webp`; assets.backgroundTreeImages.push(img); menedzerZasobow.sledz(img); }
-for (let i = 1; i <= 5; i++) { const img = new Image(); img.src = `img/building${i}.webp`; assets.buildingImages.push(img); menedzerZasobow.sledz(img); }
+for (let i = 1; i <= 7; i++) { const img = new Image(); img.src = `Tree${i}.webp`; assets.treeImages.push(img); menedzerZasobow.sledz(img); }
+for (let i = 1; i <= 7; i++) { const img = new Image(); img.src = `tree${i}.webp`; assets.backgroundTreeImages.push(img); menedzerZasobow.sledz(img); }
+for (let i = 1; i <= 5; i++) { const img = new Image(); img.src = `building${i}.webp`; assets.buildingImages.push(img); menedzerZasobow.sledz(img); }
 const specialBuildingNames = ['a', 'b', 'c', 'd', 'e', 'f'];
-for (const name of specialBuildingNames) { const img = new Image(); img.src = `img/building${name}.webp`; assets.specialBuildingImages.push(img); menedzerZasobow.sledz(img); }
-for (let i = 1; i <= 3; i++) { const img = new Image(); img.src = `img/field${i}.webp`; assets.fieldImages.push(img); menedzerZasobow.sledz(img); }
+for (const name of specialBuildingNames) { const img = new Image(); img.src = `building${name}.webp`; assets.specialBuildingImages.push(img); menedzerZasobow.sledz(img); }
+for (let i = 1; i <= 3; i++) { const img = new Image(); img.src = `field${i}.webp`; assets.fieldImages.push(img); menedzerZasobow.sledz(img); }
 
 signsToSpawn.forEach(signData => {
     const img = new Image();
@@ -2270,7 +2270,7 @@ let timeSinceLastCarSpawn = 0;
 const activeCars = [];
 const carImageFiles = ['car1.png', 'car2.png'];
 
-carImageFiles.forEach(file => { const img = new Image(); img.src = `img/${file}`; assets.cars.push(img); menedzerZasobow.sledz(img); });
+carImageFiles.forEach(file => { const img = new Image(); img.src = `${file}`; assets.cars.push(img); menedzerZasobow.sledz(img); });
 
 function spawnEnemyCar() {
     if (assets.cars.length === 0 || assets.cars.some(img => !img.complete)) return;
@@ -2966,16 +2966,16 @@ const mapImages = {
 // Ładowanie obrazów dla pierwszej mapy (map_1.png, map_2.png, ...)
 for (let i = 1; i <= NUM_MAP_STRIPS; i++) {
     const img = new Image();
-    // Upewnij się, że pliki znajdują się w folderze `img/`
-    img.src = `img/map_${i}.png`; 
+    // Upewnij się, że pliki znajdują się w folderze ``
+    img.src = `map_${i}.png`; 
     mapImages.versions.map1.push(img);
 }
 
 // Ładowanie obrazów dla drugiej mapy (map2_1.png, map2_2.png, ...)
 for (let i = 1; i <= NUM_MAP_STRIPS; i++) {
     const img = new Image();
-    // Upewnij się, że pliki znajdują się w folderze `img/`
-    img.src = `img/map2_${i}.png`; 
+    // Upewnij się, że pliki znajdują się w folderze ``
+    img.src = `map2_${i}.png`; 
     mapImages.versions.map2.push(img);
 }
 
@@ -3782,44 +3782,44 @@ function drawSlowOpponents() {
 // --- ZMIANA: Dodanie dźwięku opponentpass.mp3 ---
 // --- ZMIANA: Dodanie dźwięków c_engineidle.mp3 i screw.mp3 ---
 const audio = { 
-  menuopen: new Audio("sound/menuopen.mp3"),
-  menu: new Audio("sound/menu.mp3"),
-  background: new Audio("sound/background.mp3"),
-  carbackground: new Audio("sound/carbackground.mp3"),
-  horn: new Audio("sound/horn.mp3"), 
-  idle: new Audio("sound/idle.mp3"), 
-  ac: new Audio("sound/ac.mp3"), 
-  ac1: new Audio("sound/1ac.mp3"),
-  gearbox: new Audio("sound/gearbox.mp3"),
-  gearbox2: new Audio("sound/gearbox2.mp3"),
-  reduction: new Audio("sound/reduction.mp3"), 
-  breaking: new Audio("sound/breaking.mp3"), 
-  gravel: new Audio("sound/gravel.mp3"), 
-  map: new Audio("sound/map.mp3"), 
-  mapMove: new Audio("sound/map2.mp3"), 
-  passing: new Audio("sound/passing.mp3"),
-  boom2: new Audio("sound/boom2.mp3"), 
-  blinker: new Audio("sound/blinker.mp3"),
-  press: new Audio("sound/press.mp3"),
-  windowrolling: new Audio("sound/windowrolling.mp3"),
-  boom: new Audio("sound/boom.mp3"),
-  hitboom: new Audio("sound/hitboom.mp3"),
-  hitmetal: new Audio("sound/hitmetal.mp3"), 
-  opponent: new Audio("sound/opponent.mp3"), 
-  opponentpass: new Audio("sound/opponentpass.mp3"),
-  radio: new Audio("sound/radio.mp3"),
-  rewind: new Audio("sound/rewind.mp3"),
-  scroll: new Audio("sound/scroll.mp3"),
-  wiper: new Audio("sound/wiper.mp3"),
-  glassboom: new Audio("sound/glassboom.mp3"), 
-  viewIn: new Audio("sound/in.mp3"),      // Dźwięk powrotu do kokpitu
-  viewOut: new Audio("sound/out.mp3"),    // Dźwięk przejścia do silnika/bagażnika
-  c_engineidle: new Audio("sound/c_engineidle.mp3"), // Dźwięk pracy silnika w tle
-  screw: new Audio("sound/screw.mp3"),             // Dźwięk odkręcania korka
-  pouring: new Audio("sound/pouring.mp3"),         // Dźwięk lania oleju
+  menuopen: new Audio("menuopen.mp3"),
+  menu: new Audio("menu.mp3"),
+  background: new Audio("background.mp3"),
+  carbackground: new Audio("carbackground.mp3"),
+  horn: new Audio("horn.mp3"), 
+  idle: new Audio("idle.mp3"), 
+  ac: new Audio("ac.mp3"), 
+  ac1: new Audio("1ac.mp3"),
+  gearbox: new Audio("gearbox.mp3"),
+  gearbox2: new Audio("gearbox2.mp3"),
+  reduction: new Audio("reduction.mp3"), 
+  breaking: new Audio("breaking.mp3"), 
+  gravel: new Audio("gravel.mp3"), 
+  map: new Audio("map.mp3"), 
+  mapMove: new Audio("map2.mp3"), 
+  passing: new Audio("passing.mp3"),
+  boom2: new Audio("boom2.mp3"), 
+  blinker: new Audio("blinker.mp3"),
+  press: new Audio("press.mp3"),
+  windowrolling: new Audio("windowrolling.mp3"),
+  boom: new Audio("boom.mp3"),
+  hitboom: new Audio("hitboom.mp3"),
+  hitmetal: new Audio("hitmetal.mp3"), 
+  opponent: new Audio("opponent.mp3"), 
+  opponentpass: new Audio("opponentpass.mp3"),
+  radio: new Audio("radio.mp3"),
+  rewind: new Audio("rewind.mp3"),
+  scroll: new Audio("scroll.mp3"),
+  wiper: new Audio("wiper.mp3"),
+  glassboom: new Audio("glassboom.mp3"), 
+  viewIn: new Audio("in.mp3"),      // Dźwięk powrotu do kokpitu
+  viewOut: new Audio("out.mp3"),    // Dźwięk przejścia do silnika/bagażnika
+  c_engineidle: new Audio("c_engineidle.mp3"), // Dźwięk pracy silnika w tle
+  screw: new Audio("screw.mp3"),             // Dźwięk odkręcania korka
+  pouring: new Audio("pouring.mp3"),         // Dźwięk lania oleju
   // --- NOWY KOD ---
-  openingbeer: new Audio("sound/openingbeer.mp3"), // Dźwięk otwierania piwa
-  drinking: new Audio("sound/drinking.mp3"),       // Dźwięk picia piwa
+  openingbeer: new Audio("openingbeer.mp3"), // Dźwięk otwierania piwa
+  drinking: new Audio("drinking.mp3"),       // Dźwięk picia piwa
   // --- KONIEC NOWEGO KODU ---
   unlocked: false 
 };
@@ -3920,14 +3920,7 @@ function managePouringSound() {
 
 window.addEventListener('keydown', unlockAudio, { once: true });
 window.addEventListener('click', unlockAudio, { once: true });
-window.addEventListener('load', () => { console.log("Strona załadowana, próbuję odtworzyć dźwięk testowo."); const testSound = audio.background; testSound.volume = 0.2; const promise = testSound.play(); if (promise !== undefined) { promise.then(_ => { console.log("Testowe odtwarzanie rozpoczęte pomyślnie!"); }).catch(error => { console.error("Testowe odtwarzanie nie powiodło się (prawdopodobnie wymaga interakcji użytkownika):", error); document.body.addEventListener('click', () => { console.log("Kliknięto, ponowna próba odtworzenia testowego dźwięku."); testSound.play(); }, { once: true }); }); }     // Istniejące funkcje
 
-
-    // Wywołujemy naszą nową funkcję, aby przygotowała świat
-    initializeWorldState(STARTING_DISTANCE_METERS);
-});
-
-window.addEventListener('resize', updateButtonPositions);
 
 
 function drawBackForests() { if (!assets.backforest.complete) return; const roadWidthTop = canvas.width * 0.001; const roadWidthBottom = canvas.width * 2.2; roadsideObjects.backforests.sort((a, b) => a.sliceIndex - b.sliceIndex); for (let i = roadsideObjects.backforests.length - 1; i >= 0; i--) { const backforest = roadsideObjects.backforests[i]; const t = 1 - backforest.sliceIndex / gameState.roadsideMaxSlices; const y = canvas.height * 0.35 + t * (canvas.height * 0.24); const width = roadWidthTop + (roadWidthBottom - roadWidthTop) * t; const lateralOffset = -(gameState.playerX / gameState.maxOffset) * 800 * t; const roadLeftX = (canvas.width - width) / 2 + lateralOffset; const roadRightX = roadLeftX + width; const baseSize = width * 0.8; const objSize = baseSize * backforest.sizeVariation; let x; if (backforest.side === "left") { x = roadLeftX - objSize * 0.2 - (backforest.xOffset * t); } else { x = roadRightX + objSize * 0.2 + (backforest.xOffset * t); } const img = backforest.image; if (img.complete && img.naturalWidth !== 0) { const drawWidth = Math.round(objSize * 2); const drawHeight = Math.round(objSize * 2 * (img.naturalHeight / img.naturalWidth)); const drawX = Math.round(x - drawWidth / 2); const drawY = Math.round(y - drawHeight); ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight); } } }
