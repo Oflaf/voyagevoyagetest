@@ -40,7 +40,8 @@
             align-items: center;
             z-index: 100; /* Najwyższy z-index, aby być na wierzchu */
             opacity: 1;
-            transition: opacity 0.5s ease-out;
+            transition: opacity 0.7s ease-out;
+            overflow: hidden;
         }
 
         /* Klasa dodawana przez JS do ukrycia ekranu */
@@ -50,43 +51,49 @@
         }
 
         #ekran-ladowania .ladowarka {
-            border: 4px solid rgba(0, 0, 0, 0.2);
-            border-top: 4px solid #ffffff;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            border-top: 5px solid #ffffff;
             border-radius: 50%;
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             animation: spin 1s linear infinite;
         }
-
+        
+        #ladowanie-info {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            text-align: right;
+        }
+        
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
 
         /* --- KONTENER I PŁÓTNA GRY --- */
-
-        /* Usunąłem niepotrzebny #canvasContainer, upraszając strukturę */
         
         /* Wspólne style dla obu płócien */
         canvas {
-            position: fixed; /* lub 'absolute', jeśli body jest kontenerem */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
             image-rendering: pixelated; /* Dla stylu retro */
         }
-
-        /* Płótno gry (2D) - zawsze na wierzchu */
+        
         #gameCanvas {
             z-index: 2;
-            background-color: transparent; /* Kluczowe: musi być przezroczyste */
+            background-color: transparent; /* Musi być przezroczyste */
         }
         
-        /* Płótno shadera (WebGL) - pod spodem */
         #shaderCanvas {
             z-index: 1;
-            display: none; /* WAŻNE: Ukryte na starcie, JS je pokaże */
+            display: none; /* Ukryte na starcie, JS je pokaże */
             pointer-events: none; /* Zapobiega przechwytywaniu kliknięć */
         }
 
@@ -94,9 +101,10 @@
 </head>
 <body>
 
-    <!-- Ekran ładowania - jest pierwszy, więc renderuje się natychmiast -->
+    <!-- Ekran ładowania jest teraz częścią HTML -->
     <div id="ekran-ladowania">
         <div class="ladowarka"></div>
+        <div id="ladowanie-info">Initialization...</div>
     </div>
     
     <!-- Płótna gry -->
